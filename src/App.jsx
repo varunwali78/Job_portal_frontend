@@ -1,10 +1,11 @@
-import React, { useContext, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import "./App.css";
 import { Context } from "./main";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./components/Auth/Login";
 import Register from "./components/Auth/Register";
 import { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 import axios from "axios";
 import Navbar from "./components/Layout/Navbar";
 import Footer from "./components/Layout/Footer";
@@ -18,25 +19,24 @@ import NotFound from "./components/NotFound/NotFound";
 import MyJobs from "./components/Job/MyJobs";
 
 const App = () => {
-  const { isAuthorized, setIsAuthorized, setUser } = useContext(Context);
+  const { setUser } = useContext(Context);
   //fetching the user
   useEffect(() => {
     const fetchUser = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8000/api/v1/user/getuser",
+          "https://jobseek-backend.onrender.com/api/v1/user/getuser",
           {
             withCredentials: true,
           }
         );
         setUser(response.data.user);
-        setIsAuthorized(true);
       } catch (error) {
-        setIsAuthorized(false);
+        toast.error("An error occurred while getting your information");
       }
     };
     fetchUser(); //calling the fetchUSer function in useeffect hook
-  }, [isAuthorized]);
+  }, []);
 
   return (
     <>
