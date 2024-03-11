@@ -19,24 +19,25 @@ import NotFound from "./components/NotFound/NotFound";
 import MyJobs from "./components/Job/MyJobs";
 
 const App = () => {
-  const { setUser } = useContext(Context);
+  const { isAuthorized, setIsAuthorized, setUser } = useContext(Context);
   //fetching the user
   useEffect(() => {
     const fetchUser = async () => {
       try {
         const response = await axios.get(
-          "https://jobseek-backend.onrender.com/api/v1/user/getuser",
+          "http://localhost:8000/api/v1/user/getuser",
           {
             withCredentials: true,
           }
         );
         setUser(response.data.user);
+        setIsAuthorized(true);
       } catch (error) {
-        toast.error("An error occurred while getting your information");
+        setIsAuthorized(false);
       }
     };
     fetchUser(); //calling the fetchUSer function in useeffect hook
-  }, []);
+  }, [isAuthorized]);
 
   return (
     <>
