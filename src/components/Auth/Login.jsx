@@ -18,7 +18,7 @@ const Login = () => {
     e.preventDefault(); // it prevents from loading the screen
     try {
       const { data } = await axios.post(
-        "http://localhost:8000/api/v1/user/login",
+        "https://jobseek-backend.onrender.com/api/v1/user/login",
         { email, password, role },
         {
           headers: {
