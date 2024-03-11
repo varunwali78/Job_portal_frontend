@@ -1,6 +1,5 @@
-import React, { useContext, useEffect } from "react";
+import React from "react";
 import "./App.css";
-import { Context } from "./main";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./components/Auth/Login";
 import Register from "./components/Auth/Register";
@@ -18,25 +17,25 @@ import NotFound from "./components/NotFound/NotFound";
 import MyJobs from "./components/Job/MyJobs";
 
 const App = () => {
-  const { isAuthorized, setIsAuthorized, setUser } = useContext(Context);
-  //fetching the user
-  useEffect(() => {
-    const fetchUser = async () => {
-      try {
-        const response = await axios.get(
-          "https://jobseek-backend.onrender.com/api/v1/user/getuser",
-          {
-            withCredentials: true,
-          }
-        );
-        setUser(response.data.user);
-        setIsAuthorized(true);
-      } catch (error) {
-        setIsAuthorized(false);
-      }
-    };
-    fetchUser(); //calling the fetchUSer function in useeffect hook
-  }, [isAuthorized]);
+  // const { isAuthorized, setIsAuthorized, setUser } = useContext(Context);
+  // //fetching the user
+  // useEffect(() => {
+  //   const fetchUser = async () => {
+  //     try {
+  //       const response = await axios.get(
+  //         "https://jobseek-backend.onrender.com/api/v1/user/getuser",
+  //         {
+  //           withCredentials: true,
+  //         }
+  //       );
+  //       setUser(response.data.user);
+  //       setIsAuthorized(true);
+  //     } catch (error) {
+  //       setIsAuthorized(false);
+  //     }
+  //   };
+  //   fetchUser(); //calling the fetchUSer function in useeffect hook
+  // }, [isAuthorized]);
 
   return (
     <>
