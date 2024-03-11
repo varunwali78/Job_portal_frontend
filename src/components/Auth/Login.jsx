@@ -37,9 +37,9 @@ const Login = () => {
     }
   };
 
-  if (isAuthorized) {
-    return <Navigate to={"/"} />; //if user is already logged in then redirect him to home
-  }
+  // if (isAuthorized) {
+  //   return <Navigate to={"/"} />; //if user is already logged in then redirect him to home
+  // }
 
   return (
     <>
