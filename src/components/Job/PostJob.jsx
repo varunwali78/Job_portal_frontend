@@ -54,6 +54,7 @@ const PostJob = () => {
             },
         {
           withCredentials: true,
+          credentials: "include",
           headers: {
             "Content-Type": "application/json",
           },

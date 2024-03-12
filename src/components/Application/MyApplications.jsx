@@ -22,6 +22,7 @@ const MyApplications = () => {
             "https://jobseek-backend.onrender.com/api/v1/application/employer/getall",
             {
               withCredentials: true,
+              credentials: "include",
             }
           )
           .then((res) => {
@@ -33,6 +34,7 @@ const MyApplications = () => {
             "https://jobseek-backend.onrender.com/api/v1/application/jobseeker/getall",
             {
               withCredentials: true,
+              credentials: "include",
             }
           )
           .then((res) => {
@@ -55,6 +57,7 @@ const MyApplications = () => {
           `https://jobseek-backend.onrender.com/api/v1/application/delete/${id}`,
           {
             withCredentials: true,
+            credentials: "include",
           }
         )
         .then((res) => {

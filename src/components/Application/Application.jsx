@@ -45,6 +45,7 @@ const Application = () => {
         formData,
         {
           withCredentials: true,
+          credentials: "include",
           headers: {
             "Content-Type": "multipart/form-data",
           },

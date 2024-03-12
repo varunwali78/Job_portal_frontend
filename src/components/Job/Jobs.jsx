@@ -12,6 +12,7 @@ const Jobs = () => {
       axios
         .get("https://jobseek-backend.onrender.com/api/v1/job/getall", {
           withCredentials: true,
+          credentials: "include",
         })
         .then((res) => {
           setJobs(res.data);

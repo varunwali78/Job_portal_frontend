@@ -18,7 +18,7 @@ const MyJobs = () => {
       try {
         const { data } = await axios.get(
           "https://jobseek-backend.onrender.com/api/v1/job/getmyjobs",
-          { withCredentials: true }
+          { withCredentials: true, credentials: "include" }
         );
         setMyJobs(data.myJobs);
       } catch (error) {

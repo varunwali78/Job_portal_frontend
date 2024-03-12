@@ -16,6 +16,7 @@ const Navbar = () => {
         "https://jobseek-backend.onrender.com/api/v1/user/logout",
         {
           withCredentials: true, //like token,cookies etc
+          credentials: "include",
         }
       );
       toast.success(response.data.message); //its is used to provied notifications

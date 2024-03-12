@@ -28,6 +28,7 @@ const App = () => {
           "https://jobseek-backend.onrender.com/api/v1/user/getuser",
           {
             withCredentials: true,
+            credentials: "include",
           }
         );
         setUser(response.data.user);
