@@ -16,6 +16,10 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault(); // it prevents from loading the screen
+    if (password.length !== 8) {
+      toast.error("Password must be only 8 characters long.");
+      return;
+    }
     try {
       const { data } = await axios.post(
         "https://jobseek-backend.onrender.com/api/v1/user/login",
