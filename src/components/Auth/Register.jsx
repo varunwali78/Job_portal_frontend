@@ -61,7 +61,7 @@ const Register = () => {
       <section className="authPage">
         <div className="container">
           <div className="header">
-            <h2>JOBSEEK</h2>
+            <h2>JobZee</h2>
             <h3>Create a new account</h3>
           </div>
           <form>

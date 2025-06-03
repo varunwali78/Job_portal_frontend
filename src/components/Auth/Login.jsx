@@ -50,7 +50,7 @@ const Login = () => {
       <section className="authPage">
         <div className="container">
           <div className="header">
-            <h2>JOBSEEK</h2>
+            <h2>JobZee</h2>
             <h3>Login to your account</h3>
           </div>
           <form>
