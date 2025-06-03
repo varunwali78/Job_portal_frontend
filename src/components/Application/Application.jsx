@@ -39,6 +39,11 @@ const Application = () => {
     formData.append("resume", resume);
     formData.append("jobId", id);
 
+    if (phone.length !== 10) {
+      toast.error("Phone number must be only 10 characters long.");
+      return;
+    }
+
     try {
       const response = await axios.post(
         "https://jobseek-backend.onrender.com/api/v1/application/post",
@@ -82,7 +87,6 @@ const Application = () => {
             onChange={(e) => setEmail(e.target.value)}
           />
           <input
-            type="number"
             placeholder="Your Phone Number"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
